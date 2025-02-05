@@ -160,6 +160,35 @@ add_action('widgets_init', 'bootstrapBasicWidgetsInit');
 
 
 /**
+ * Registers Custom CSS File URL for the Customizer.
+ */
+function mytheme_customize_register($wp_customize)
+{
+	// Add a section for the custom CSS URL
+	$wp_customize->add_section('custom_css_section', array(
+		'title'       => __('Custom CSS File', 'mytheme'),
+		'description' => __('Add URL for a Custom CSS file.', 'mytheme'),
+		'priority'    => 30,
+	));
+
+	// Add a setting for the custom CSS URL
+	$wp_customize->add_setting('custom_css_url', array(
+		'default'           => '',
+		'sanitize_callback' => 'esc_url_raw',
+	));
+
+	// Add a control for the custom CSS URL
+	$wp_customize->add_control('custom_css_url', array(
+		'label'    => __('Custom CSS URL', 'mytheme'),
+		'section'  => 'custom_css_section',
+		'settings' => 'custom_css_url',
+		'type'     => 'url',
+	));
+}
+add_action('customize_register', 'mytheme_customize_register');
+
+
+/**
  * Determine if Block Editor (Gutenberg) Support Needed
  */
 function is_blocks_active()
@@ -254,6 +283,15 @@ if (! function_exists('blueThemesEnqueueScripts')) {
 
 		/* BLUE THEMES STYLESHEET */
 		wp_enqueue_style('bh-ess-styles', get_template_directory_uri() . '/css/blue-ess.css', array(), $themeVersion);
+
+
+		/* CUSTOM USER STYLESHEET */
+		$custom_css_url = get_theme_mod('custom_css_url');
+
+		if (! empty($custom_css_url)) {
+			wp_enqueue_style('custom-css', esc_url($custom_css_url));
+		}
+
 
 
 		/* BOOTSTRAP 3.4.1 SCRIPT */
