@@ -166,8 +166,8 @@ function mytheme_customize_register($wp_customize)
 {
 	// Add a section for the custom CSS URL
 	$wp_customize->add_section('custom_css_section', array(
-		'title'       => __('Custom CSS File', 'blue-haze'),
-		'description' => __('Add URL for a Custom CSS file.', 'blue-haze'),
+		'title'       => __('Custom CSS File', 'blue-lite'),
+		'description' => __('Add URL for a Custom CSS file.', 'blue-lite'),
 		'priority'    => 30,
 	));
 
@@ -179,7 +179,7 @@ function mytheme_customize_register($wp_customize)
 
 	// Add a control for the custom CSS URL
 	$wp_customize->add_control('custom_css_url', array(
-		'label'    => __('Custom CSS URL', 'blue-haze'),
+		'label'    => __('Custom CSS URL', 'blue-lite'),
 		'section'  => 'custom_css_section',
 		'settings' => 'custom_css_url',
 		'type'     => 'url',
