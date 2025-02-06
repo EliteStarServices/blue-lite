@@ -29,3 +29,5 @@ jobs:
           asset_path: blue-lite.zip
           asset_name: blue-lite.zip
           asset_content_type: application/zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
