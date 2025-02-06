@@ -14,17 +14,18 @@ jobs:
           git config user.name "GitHub Actions Bot"
           git config user.email "<>"
       - name: Create artifact
-        run : |
+        run: |
           git archive -o blue-lite.zip --prefix blue-lite/ HEAD
           ls
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-            name: blue-lite
-            path: blue-lite.zip
+          name: blue-lite
+          path: blue-lite.zip
       - name: Upload to release
-        uses: JasonEtco/upload-to-release@master
+        uses: actions/upload-release-asset@v1
         with:
-          args: blue-lite.zip application/zip
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: blue-lite.zip
+          asset_name: blue-lite.zip
+          asset_content_type: application/zip
