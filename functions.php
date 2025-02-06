@@ -284,14 +284,12 @@ if (! function_exists('blueThemesEnqueueScripts')) {
 		/* BLUE THEMES STYLESHEET */
 		wp_enqueue_style('bh-ess-styles', get_template_directory_uri() . '/css/blue-ess.css', array(), $themeVersion);
 
-
 		/* CUSTOM USER STYLESHEET */
 		$custom_css_url = get_theme_mod('custom_css_url');
 
 		if (! empty($custom_css_url)) {
 			wp_enqueue_style('custom-css', esc_url($custom_css_url));
 		}
-
 
 
 		/* BOOTSTRAP 3.4.1 SCRIPT */
