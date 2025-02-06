@@ -1,23 +1,9 @@
 <?php
 
-/* Template Name: Clean Slate */
+/* Template Name: Clean Slate (Content Only) */
 /* Template Post Type: page */
 
-//get_header();
-wp_head();
-
-?>
-
-<div class="container page-container">
-	<?php do_action('before'); ?>
-
-	<body <?php body_class(); ?>>
-		<?php
-		if (function_exists('wp_body_open')) {
-			wp_body_open();
-		} else {
-			do_action('wp_body_open');
-		}
+get_header('clean');
 
 		// set full width - no sidebars
 		//$main_column_size = bootstrapBasicGetMainColumnSize();

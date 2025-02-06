@@ -1,15 +1,14 @@
 <?php
 
-/* Template Name: Clean Wide Post */
+/* Template Name: Wide No Title Post */
 /* Template Post Type: post */
 
-get_header('clean');
+get_header('notitle');
 
-// set full width - no sidebars
-//$main_column_size = bootstrapBasicGetMainColumnSize();
-$main_column_size = 12;
+/* Determine Main Column Size from Actived Sidebar(s) */
+$main_column_size = bootstrapBasicGetMainColumnSize();
 ?>
-<?php //get_sidebar('left'); ?>
+<?php get_sidebar('left'); ?>
 <div class="col-md-<?php echo esc_attr($main_column_size); ?> content-area" id="main-column">
 	<main id="main" class="site-main" role="main">
 		<?php
@@ -36,6 +35,6 @@ $main_column_size = 12;
 	</main>
 </div>
 <?php
-//get_sidebar('right');
+get_sidebar('right');
 get_footer();
 ?>

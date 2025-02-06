@@ -270,7 +270,7 @@ if (! function_exists('blueThemesEnqueueScripts')) {
 		unset($Theme);
 
 		/* WIDE PAGE STYLESHEET */
-		if (basename(get_page_template()) === 'page-wide.php' || basename(get_page_template()) === 'page-clean-wide.php' || basename(get_page_template()) === 'single-wide.php' || basename(get_page_template()) === 'single-clean-wide.php') {
+		if (basename(get_page_template()) === 'page-wide.php' || basename(get_page_template()) === 'page-clean-wide.php' || basename(get_page_template()) === 'page-notitle-wide.php' || basename(get_page_template()) === 'single-wide.php' || basename(get_page_template()) === 'single-notitle-wide.php' || basename(get_page_template()) === 'single-clean-wide.php') {
 			wp_enqueue_style('wide-stylesheet', get_template_directory_uri() . '/css/wide.css', array(), null);
 		}
 

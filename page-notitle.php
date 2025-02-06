@@ -1,18 +1,17 @@
 <?php
 
-/* Template Name: Wide Clean Slate */
+/* Template Name: Default - No Title */
 /* Template Post Type: page */
 
-get_header('clean');
+get_header('notitle');
 
-
-// set full width - no sidebars
-//$main_column_size = bootstrapBasicGetMainColumnSize();
-$main_column_size = 12;
-
-//get_sidebar('left'); 
+/* Determine Main Column Size from Actived Sidebar(s) */
+$main_column_size = bootstrapBasicGetMainColumnSize();
 ?>
-<div class="col-md-<?php echo esc_attr($main_column_size); ?> content-area">
+
+<?php get_sidebar('left'); ?>
+<?php /* Remove _ from Main Column to Activate Container (Border) */ ?>
+<div class="col-md-<?php echo esc_attr($main_column_size); ?> content-area" id="_main-column">
 	<main id="main" class="site-main" role="main">
 		<?php
 		while (have_posts()) {
@@ -28,7 +27,5 @@ $main_column_size = 12;
 		?>
 	</main>
 </div>
-<?php
-//get_sidebar('right'); 
-get_footer();
-?>
+<?php get_sidebar('right'); ?>
+<?php get_footer(); ?>
