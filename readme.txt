@@ -17,8 +17,16 @@ Blue Lite can use all Bootstrap 3 classes, elements and styles.
 
 ==Changelog==
 
+### v0.9.1
+
+2025-02-06
+
+* Reconfigured Templates
+* Beta Release
+
 ### v0.9.0
-2025-xx-xx
+
+*No Public Release*
 
 * Initial reconfiguration of styles and scripts
 * Beta Version development begins
