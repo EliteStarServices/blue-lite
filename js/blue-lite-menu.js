@@ -1,3 +1,5 @@
+/* Mobile Menu Toggle - Vanilla JS v1.0.0 */
+
 document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.querySelector('.menu-toggle');
     const navMenu = document.querySelector('.nav-menu');

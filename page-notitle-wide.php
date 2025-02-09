@@ -1,6 +1,6 @@
 <?php
 
-/* Template Name: Wide Default - No Title */
+/* Template Name: Wide Default - No Branding */
 /* Template Post Type: page */
 
 get_header('notitle');

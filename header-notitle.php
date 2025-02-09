@@ -20,6 +20,11 @@
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
+	<?php
+	/* LOAD DYNAMIC CSS FOR MENU BREAKPOINT */
+	require_once get_template_directory() . '/inc/blue-lite-menu.php';
+	?>
+
 	<!--wordpress head-->
 	<?php wp_head(); ?>
 </head>
@@ -51,19 +56,21 @@
 		if ($is_assigned) {
 		?>
 
-			<div class="row main-navigation">
-				<div class="col-md-12">
-					<nav class="navbar-default" role="navigation">
-						<div class="_collapse _navbar-collapse _navbar-primary-collapse">
+<div class="row main-navigation">
+					<div class="col-md-12">
+						<nav class="navbar-default" role="navigation">
 
+							<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+								<span class="menu-toggle-text">☰ <?php echo bloginfo('name'); ?> ☰</span>
+							</button>
 							<?php wp_nav_menu(array( 'theme_location' => 'primary', 'container_class' => 'main-nav', 'menu_class' => 'nav-menu' )); ?>
 
 							<?php //dynamic_sidebar('navbar-right'); 
 							?>
-						</div><!--.navbar-collapse-->
-					</nav>
-				</div>
-			</div><!--.main-navigation-->
+
+						</nav>
+					</div>
+				</div><!--.main-navigation-->
 
 		<?php } ?>
 

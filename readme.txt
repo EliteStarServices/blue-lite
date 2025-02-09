@@ -17,6 +17,13 @@ Blue Lite can use all Bootstrap 3 classes, elements and styles.
 
 ==Changelog==
 
+### v0.9.3
+
+2025-02-09
+
+* Upgrade Menu - Dynamic Mobile Breakpoint
+* FIX - Include No Branding Post Template
+
 ### v0.9.2
 
 2025-02-08

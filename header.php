@@ -20,6 +20,11 @@
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
+	<?php
+	/* LOAD DYNAMIC CSS FOR MENU BREAKPOINT */
+	require_once get_template_directory() . '/inc/blue-lite-menu.php';
+	?>
+
 	<!--wordpress head-->
 	<?php wp_head(); ?>
 </head>
@@ -97,13 +102,13 @@
 					<div class="col-md-12">
 						<nav class="navbar-default" role="navigation">
 
-								<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-									<span class="menu-toggle-text">☰</span>
-								</button>
-								<?php wp_nav_menu(array( 'theme_location' => 'primary', 'container_class' => 'main-nav', 'menu_class' => 'nav-menu' )); ?>
+							<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+								<span class="menu-toggle-text">☰</span>
+							</button>
+							<?php wp_nav_menu(array( 'theme_location' => 'primary', 'container_class' => 'main-nav', 'menu_class' => 'nav-menu' )); ?>
 
-								<?php //dynamic_sidebar('navbar-right'); 
-								?>
+							<?php //dynamic_sidebar('navbar-right'); 
+							?>
 
 						</nav>
 					</div>

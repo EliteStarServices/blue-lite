@@ -160,32 +160,53 @@ add_action('widgets_init', 'bootstrapBasicWidgetsInit');
 
 
 /**
- * Registers Custom CSS File URL for the Customizer.
+ * Registers Custom Controls for the Customizer.
  */
-function mytheme_customize_register($wp_customize)
+function bluelite_customize_register($wp_customize)
 {
-	// Add a section for the custom CSS URL
+	/* Add a Section for the Custom CSS URL */
 	$wp_customize->add_section('custom_css_section', array(
 		'title'       => __('Custom CSS File', 'blue-lite'),
 		'description' => __('Add URL for a Custom CSS file.', 'blue-lite'),
 		'priority'    => 30,
 	));
 
-	// Add a setting for the custom CSS URL
+	/* Add a Setting for the Custom CSS URL */
 	$wp_customize->add_setting('custom_css_url', array(
 		'default'           => '',
 		'sanitize_callback' => 'esc_url_raw',
 	));
 
-	// Add a control for the custom CSS URL
+	/* Add a Control for the Custom CSS URL */
 	$wp_customize->add_control('custom_css_url', array(
 		'label'    => __('Custom CSS URL', 'blue-lite'),
 		'section'  => 'custom_css_section',
 		'settings' => 'custom_css_url',
 		'type'     => 'url',
 	));
+
+
+	/* Add a Section for the Mobile Menu Breakpoint */
+	$wp_customize->add_section('blue_lite_mobile_menu', array(
+		'title' => __('Mobile Menu Breakpoint', 'blue-lite'),
+		'priority' => 30,
+	));
+
+	/* Add the Setting for the Mobile Menu Breakpoint */
+	$wp_customize->add_setting('blue_lite_mobile_menu_breakpoint', array(
+		'default' => '768',
+		'sanitize_callback' => 'absint',
+	));
+
+	/* Add the Control for the Mobile Menu Breakpoint */
+	$wp_customize->add_control('blue_lite_mobile_menu_breakpoint', array(
+		'label' => __('Activate Mobile Menu Once X Pixels or Less', 'blue-lite'),
+		'section' => 'blue_lite_mobile_menu',
+		'settings' => 'blue_lite_mobile_menu_breakpoint',
+		'type' => 'number',
+	));
 }
-add_action('customize_register', 'mytheme_customize_register');
+add_action('customize_register', 'bluelite_customize_register');
 
 
 /**
