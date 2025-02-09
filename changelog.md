@@ -4,6 +4,12 @@
 
 ---
 
+### v0.9.2
+
+2025-02-08
+
+* Upgrade Menu - Responsive (Mobile @ 1200px)
+
 ### v0.9.1
 
 2025-02-06

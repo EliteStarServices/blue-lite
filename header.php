@@ -96,12 +96,15 @@
 				<div class="row main-navigation">
 					<div class="col-md-12">
 						<nav class="navbar-default" role="navigation">
-							<div class="_collapse _navbar-collapse _navbar-primary-collapse">
 
+								<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+									<span class="menu-toggle-text">☰</span>
+								</button>
 								<?php wp_nav_menu(array( 'theme_location' => 'primary', 'container_class' => 'main-nav', 'menu_class' => 'nav-menu' )); ?>
 
-								<?php //dynamic_sidebar('navbar-right'); ?>
-							</div><!--.navbar-collapse-->
+								<?php //dynamic_sidebar('navbar-right'); 
+								?>
+
 						</nav>
 					</div>
 				</div><!--.main-navigation-->

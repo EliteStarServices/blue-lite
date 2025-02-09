@@ -282,7 +282,7 @@ if (! function_exists('blueThemesEnqueueScripts')) {
 		wp_enqueue_style('bootstrap-theme-styles', get_template_directory_uri() . '/css/bootstrap-theme.min.css', array(), '3.4.1');
 
 		/* BLUE THEMES STYLESHEET */
-		wp_enqueue_style('bh-ess-styles', get_template_directory_uri() . '/css/blue-ess.css', array(), $themeVersion);
+		wp_enqueue_style('blue-lite-css', get_template_directory_uri() . '/css/blue-lite.css', array(), $themeVersion);
 
 		/* CUSTOM USER STYLESHEET */
 		$custom_css_url = get_theme_mod('custom_css_url');
@@ -291,9 +291,11 @@ if (! function_exists('blueThemesEnqueueScripts')) {
 			wp_enqueue_style('custom-css', esc_url($custom_css_url));
 		}
 
-
 		/* BOOTSTRAP 3.4.1 SCRIPT */
 		wp_enqueue_script('bootstrap-script', get_template_directory_uri() . '/js/vendor/bootstrap.min.js', array( 'jquery' ), '3.4.1', true);
+
+		/* BLUE LITE MENU TOGGLE */
+		wp_enqueue_script('blue-lite-menu', get_template_directory_uri() . '/js/blue-lite-menu.js', array( 'jquery' ), '1.0.0', true);
 
 
 		/* I DON'T THINK THIS IS NEEDED ANYMORE */
@@ -325,6 +327,7 @@ if (! function_exists('blueThemesEnqueueScripts')) {
  * ENQUEUE SCRIPTS AND STYLES END
  */
 add_action('wp_enqueue_scripts', 'blueThemesEnqueueScripts');
+
 
 /**
  * ADD SUPPORT FOR CUSTOM LOGO
@@ -400,7 +403,6 @@ $myUpdateChecker = PucFactory::buildUpdateChecker(
 
 /* BLUE HAZE ADMIN NOTIFICATION EXAMPLE */
 /* v2.0.0 REQUIRES WARNING IF UPGRADING - BREAKING CHANGES */
-/* v0.9.9.4 REQUIRED ANNOUNCEMENT - Post Template Select Plugin was Depreciated */
 
 /* Check if Upgrade */
 /*

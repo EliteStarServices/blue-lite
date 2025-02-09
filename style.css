@@ -4,7 +4,7 @@ Theme URI: https://elite-star-services.com/
 Author: Elite Star Services
 Author URI: https://elite-star-services.com/
 Description: Blue Lite is trimmed down version of Blue Haze for ClassicPress & WordPress.
-Version: 0.9.1
+Version: 0.9.2
 Requires CP: 1.7
 Requires PHP: 7.4
 Requires at least: 4.9
@@ -14,83 +14,6 @@ License URI: https://elite-star-services.com/license/
 Text Domain: blue-lite
 Domain Path: /languages/
 */
-
-
-/* BLUE THEMES CSS MENU */
-.nav-menu {
-	border-radius: 5px;
-	background-color: #48649F;
-	list-style: none;
-	padding: 0;
-	margin: 0;
-	display: flex;
-}
-
-.nav-menu li {
-	z-index: 1000;
-	position: relative;
-}
-
-.nav-menu li a {
-	border-radius: 5px;
-	display: block;
-	padding: 8px 8px;
-	text-decoration: none;
-	background-color: #48649F;
-	color: #fff;
-}
-
-.nav-menu li a:hover {
-	background-color: #428BCA;
-}
-
-.nav-menu li ul {
-	display: none;
-	position: absolute;
-	background-color: #48649F;
-	margin: 0;
-	list-style: none;
-}
-
-.nav-menu li:hover ul {
-	background-color: transparent;
-	display: block;
-}
-
-.nav-menu li ul li a {
-	padding: 8px 8px;
-}
-
-.main-nav ul {
-	list-style: none;
-	padding: 4px;
-	margin: 0;
-}
-
-.main-nav li {
-	display: inline-block;
-	position: relative;
-	padding-right: 8px;
-}
-
-.main-nav ul ul {
-	padding: 0px;
-	display: none;
-	position: absolute;
-	top: 100%;
-	left: 0;
-	background: #f8f8f8;
-}
-
-.main-nav ul li:hover>ul {
-	display: block;
-}
-
-.main-nav ul ul li {
-	display: block;
-	padding: 4px;
-	width: 180px;
-}
 
 
 /* Some Default CSS */
